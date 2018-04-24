@@ -7,7 +7,9 @@ class Child1 extends HTMLElement {
         super();
     }
 
-    connectedCallback() {}
+    connectedCallback() {
+        this.innerHTML = `<h3>I'm child1</h3>`;
+    }
     disconnectedCallback() {}
     attributeChangedCallback(attrName, oldVal, newVal) {}
     adoptedCallback() {}

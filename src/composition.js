@@ -1,9 +1,16 @@
+import EventBus from "./eventBus.js";
+
 export default (base) => class Composition extends base {
-    constructor(){
+
+    constructor() {
         super();
     }
 
-    connectedCallback(){
-        console.log('from Composition');
+    createdCallback() {
+        console.log('createdCallback from base');
     }
+
+    
+
+
 }
