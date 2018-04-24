@@ -1,4 +1,6 @@
-class ParentComponent extends HTMLElement {
+import Composition from './composition.js'
+
+class ParentComponent extends Composition(HTMLElement) {
     static get observedAttributes() {
         return [''];
     }
@@ -7,7 +9,9 @@ class ParentComponent extends HTMLElement {
         super();
     }
 
-    connectedCallback() {}
+    connectedCallback() {
+        console.log('from ParentElement!');
+    }
     disconnectedCallback() {}
     attributeChangedCallback(attrName, oldVal, newVal) {}
     adoptedCallback() {}
