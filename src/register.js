@@ -4,5 +4,5 @@ import {Child2} from './child2.js';
 
 
 window.customElements.define('parent-component',ParentComponent);
-window.customElements.define('child1',Child1);
-window.customElements.define('child2',Child2);
+window.customElements.define('x-child1',Child1);
+window.customElements.define('x-child2',Child2);
