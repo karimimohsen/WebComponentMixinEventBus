@@ -11,15 +11,18 @@ class ParentComponent extends Composition(HTMLElement) {
         this.root = this.attachShadow({
             mode: 'open'
         });
-        this.root.innerHTML='<x-child1></x-child1>'
-        this.eventBus = new EventBus();
+        this.EventBus = new EventBus();
+        // const template = this.createTemplateWithInnerHTML(ParentComponent.Template);
+        // const clone = template.cloneNode(true);
+        // this.root.appendChild(clone)
+        this.root.innerHTML = `            
+            <slot></slot>
+        `;
     }
 
     connectedCallback() {
         console.log('connectedCallback from ParentElement!');
-        // const template = this.createTemplateWithInnerHTML(ParentComponent.Template);
-        // const clone = template.cloneNode(true);
-        // this.root.appendChild(clone);
+        // this.root.innerHTML='<x-child1></x-child1>';
     }
     disconnectedCallback() {}
     attributeChangedCallback(attrName, oldVal, newVal) {}

@@ -1,3 +1,5 @@
+import Composition from './composition.js'
+
 class Child1 extends HTMLElement {
     static get observedAttributes() {
         return [''];
@@ -5,6 +7,11 @@ class Child1 extends HTMLElement {
 
     constructor() {
         super();
+        
+        
+        this.EventBus.subscribe('messageEvent', (data) => {
+            console.log(data.comment);
+        });
     }
 
     connectedCallback() {

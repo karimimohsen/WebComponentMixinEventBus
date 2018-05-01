@@ -4,13 +4,12 @@ export default (base) => class Composition extends base {
 
     constructor() {
         super();
+        this._eventBus = 'first';
     }
-
-    createdCallback() {
-        console.log('createdCallback from base');
+    get EventBus() {
+        return this._eventBus;
     }
-
-    
-
-
+    set EventBus(value) {
+        this._eventBus = value;
+    }
 }
