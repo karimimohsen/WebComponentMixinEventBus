@@ -1,7 +1,7 @@
 import Composition from './composition.js'
 import EventBus from './eventBus.js';
 
-class ParentComponent extends Composition(HTMLElement) {
+class ParentComponent extends HTMLElement {
     static get observedAttributes() {
         return [''];
     }

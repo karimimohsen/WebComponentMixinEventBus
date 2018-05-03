@@ -1,15 +1,24 @@
 import EventBus from "./eventBus.js";
 
-export default (base) => class Composition extends base {
+// export default (base) => class Composition extends base {
 
+//     constructor() {
+//         super();
+//         console.dir(document.querySelector('parent-component'));
+
+//     }
+
+//     getRoot() {
+//         if (document.children.item[0])
+//             this.EventBus =  document.children.item[0].EventBus;
+//     }
+
+// }
+
+
+export default (tagName) => class extends HTMLElement {
     constructor() {
         super();
-        this._eventBus = 'first';
-    }
-    get EventBus() {
-        return this._eventBus;
-    }
-    set EventBus(value) {
-        this._eventBus = value;
+        this.EventBus = document.querySelector(tagName).EventBus;
     }
 }

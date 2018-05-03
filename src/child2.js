@@ -1,13 +1,14 @@
 import Composition from './composition.js'
+import ParentComponent from './parentComponent.js';
 
-class Child2 extends Composition(HTMLElement) {
+class Child2 extends Composition('parent-component') {
     static get observedAttributes() {
         return [''];
     }
 
     constructor() {
         super();
-        this.addEventListener('click', (event) => {
+        this.addEventListener('click', async (event) => {
             this.EventBus.publish('messageEvent', {
                 comment: 'message from child2'
             });

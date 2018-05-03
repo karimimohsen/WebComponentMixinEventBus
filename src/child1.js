@@ -1,14 +1,15 @@
 import Composition from './composition.js'
+import ParentComponent from './parentComponent.js';
 
-class Child1 extends HTMLElement {
+class Child1 extends Composition('parent-component') {
     static get observedAttributes() {
         return [''];
     }
 
     constructor() {
         super();
-        
-        
+
+
         this.EventBus.subscribe('messageEvent', (data) => {
             console.log(data.comment);
         });
